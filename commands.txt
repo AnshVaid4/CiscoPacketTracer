@@ -1,0 +1,17 @@
+enable [admin console]
+sh interfaces status [to check status of all the ports]
+config terminal [configure the port and IP address on it]
+int <interface> [To configure IP to interface]
+ip address <IP> <SubnetMask>
+no shutdown [to activate the link]
+hostname R1
+enable secret class  [Password for root]
+line con 0 >> password <password> >> login [Password on physical connecting to router]
+service password-encryption [encrypt plain text password]
+banner motd $Authorized Users Only!$  [Creat login banner]
+ip default-gateway <IP> [Setting default gateway
+write mem [save the running configuration file]
+ip domain-name academy.net [To specify the domain name]
+crypto key generate rsa [Generate RSA keys]
+username <username> secret <password> [For creating a user and password]
+line vty 0 4 [SSH configuration] >> login local >> transport input ssh
