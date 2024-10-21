@@ -15,3 +15,37 @@ ip domain-name academy.net [To specify the domain name]
 crypto key generate rsa [Generate RSA keys]
 username <username> secret <password> [For creating a user and password]
 line vty 0 4 [SSH configuration] >> login local >> transport input ssh
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+##Setting password for vty terminal
+line vty 0 4	[Used for interacting switch's terminal remotely]
+password <>	[setting the password for vty]
+login		[login password]
+
+exit
+exit
+
+sh run
+
+
+##Privileged exec mode (enable)
+enable password <> [normal login console]
+enable secret <> [priv esc]
+login
+exit
+exit
+
+
+##Vlan1
+int vlan1
+ip address <> <>
+no shutdown
+
+
+
+
+
+##Save
+copy run start
