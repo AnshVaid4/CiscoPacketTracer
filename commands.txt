@@ -17,6 +17,8 @@ username <username> secret <password> [For creating a user and password]
 line vty 0 4 [SSH configuration] >> login local >> transport input ssh
 no ip domain-lookup [disable DNS-lookup]
 
+--------------------------------------------------------------------------------------------------------------------
+
 ##shutting down the ports
 interface range fa0/1-24
 shutdown
@@ -25,6 +27,12 @@ shutdown
 interface range fa0/1-24
 switchport mode access
 no shutdown
+
+--------------------------------------------------------------------------------------------------------------------
+
+##Create VLANs
+config term >> vlan <id> >> name <vlanName>
+end
 
 --------------------------------------------------------------------------------------------------------------------
 
