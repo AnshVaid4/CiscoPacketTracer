@@ -15,7 +15,7 @@ ip domain-name academy.net [To specify the domain name]
 crypto key generate rsa [Generate RSA keys]
 username <username> secret <password> [For creating a user and password]
 line vty 0 4 [SSH configuration] >> login local >> transport input ssh
-
+no ip domain-lookup [disable DNS-lookup]
 
 --------------------------------------------------------------------------------------------------------------------
 
