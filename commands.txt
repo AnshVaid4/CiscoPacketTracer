@@ -1,5 +1,5 @@
 enable [admin console]
-sh interfaces status [to check status of all the ports]
+sh(ow) interfaces status [to check status of all the ports]
 config terminal [configure the port and IP address on it]
 int <interface> [To configure IP to interface]
 ip address <IP> <SubnetMask>
@@ -34,6 +34,8 @@ no shutdown
 config term >> vlan <id> >> name <vlanName>
 end
 
+sh(ow) vlan brief
+
 --------------------------------------------------------------------------------------------------------------------
 
 ##Setting password for vty terminal
@@ -44,7 +46,7 @@ login		[login password]
 exit
 exit
 
-sh run
+sh(ow) run
 
 
 ##Privileged exec mode (enable)
