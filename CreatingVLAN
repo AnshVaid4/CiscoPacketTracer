@@ -1,0 +1,24 @@
+Shutdown the ports of switches: config t > interface range fa0/1-24  > shutdown
+Re-enable: config t > interface range fa0/6, fa0/11, fa0/18  > switchport mode access 
+
+>>Creating a vlan
+config t > vlan [any name] > name [any name/purpose]
+
+`After this step the vlan with your initialized name will be created but still all the ports on switch are the part of vlan1`
+
+>>Check status of created vlan ids
+show vlan brief
+
+`Now the task is to assign switch ports to the created VLANs`
+config t > interface range fa0/6-10 > switchport access vlan [id]		(switchport access vlan [id] command gives that port the access of vlan id provided in the command)
+
+`This changes the ports from vlan1 to the specified vlan id`
+show vlan id [id]
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+10   faculty/staff                    active    Fa0/11, Fa0/12, Fa0/13, Fa0/14
+                                                Fa0/15, Fa0/16, Fa0/17
+
+`Now create a trunk so that the switches share the details about vlan amongst themselves`	[this also brings connection between switches up]
+config t > interface range fa0/1-5  > switchport mode trunk > switchport trunk native vlan 99 > no shutdown 
